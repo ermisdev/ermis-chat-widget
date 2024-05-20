@@ -81,7 +81,7 @@ export default App;
 | Prop Name             | Type   | Default Value                                     | Description                                                                         |
 | --------------------- | ------ | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `apiKey`              | string |                                                   | The API key required for the **OpenAI API** integration.                            |
-| `openWidget`         | boolean | `false`                                       | The name/title of the chatbot displayed in the header.                              |
+| `openWidget`         | boolean | false                                       | The name/title of the chatbot displayed in the header.                              |
 | `isTypingMessage`     | string | `"Typing..."`                                     | The message displayed when the chatbot is typing a response.                        |
 | `IncommingErrMsg`     | string | `"Oops! Something went wrong. Please try again."` | The error message displayed when an API request fails.                              |
 | `primaryColor`        | string | `"#eb4034"`                                       | The primary color used for styling elements like headers, buttons, and backgrounds. |
