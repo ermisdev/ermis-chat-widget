@@ -20,11 +20,11 @@
 1. Install the latest version:
 
 ```bash
-npm install ermis-chat-widget
+npm install ermis-chat-widget@latest
 ```
 
 ```bash
-yarn add ermis-chat-widget
+yarn add ermis-chat-widget@latest
 ```
 
 2. Import the library:
@@ -37,10 +37,12 @@ import { ErmisChatWidget } from "ermis-chat-widget";
 
 ```javascript
 <ErmisChatWidget
+  openWidget={openWidget}
+  onToggleWidget={onToggleWidget}
   token="YOUR_TOKEN"
   senderId="YOUR_WALLET_ADDRESS"
-  receiverId="RECEIVER_WALLET_ADDRESS"
-  primaryColor="#eb4034"
+  receiverId="RECEIVER_WALLET_ADDRESS" // optional
+  primaryColor="#eb4034" // optional
 />
 ```
 
@@ -51,13 +53,21 @@ import React from "react";
 import { ErmisChatWidget } from "ermis-chat-widget";
 
 const App = () => {
+  const [open, setOpen] = useState(false);
+
+  const onToggleWidget = () => {
+    setOpen(!open);
+  };
+
   return (
     <div>
       <ErmisChatWidget
+        openWidget={open}
+        onToggleWidget={onToggleWidget}
         token="YOUR_TOKEN"
         senderId="YOUR_WALLET_ADDRESS"
-        receiverId="RECEIVER_WALLET_ADDRESS"
-        primaryColor="#eb4034"
+        receiverId="RECEIVER_WALLET_ADDRESS" // optional
+        primaryColor="#eb4034" // optional
       />
     </div>
   );
@@ -71,7 +81,7 @@ export default App;
 | Prop Name             | Type   | Default Value                                     | Description                                                                         |
 | --------------------- | ------ | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `apiKey`              | string |                                                   | The API key required for the **OpenAI API** integration.                            |
-| `openWidget`         | boolean | `"Chatbot"`                                       | The name/title of the chatbot displayed in the header.                              |
+| `openWidget`         | boolean | `false`                                       | The name/title of the chatbot displayed in the header.                              |
 | `isTypingMessage`     | string | `"Typing..."`                                     | The message displayed when the chatbot is typing a response.                        |
 | `IncommingErrMsg`     | string | `"Oops! Something went wrong. Please try again."` | The error message displayed when an API request fails.                              |
 | `primaryColor`        | string | `"#eb4034"`                                       | The primary color used for styling elements like headers, buttons, and backgrounds. |
