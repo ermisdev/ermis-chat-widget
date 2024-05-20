@@ -81,9 +81,9 @@ export default App;
 | Prop Name             | Type   | Default Value                                     | Description                                                                         |
 | --------------------- | ------ | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `apiKey`              | string |                                                   | Your API key for authenticating the chat widget.                            |
-| `openWidget`          | boolean | false                                             | Boolean value to control whether the widget is open (true) or closed (false) on initial load.                                                      |
-| `onToggleWidget`      | function | -                                               | Callback function that triggers when the widget is toggled. Receives a boolean argument indicating the widget's current state (true for open, false for closed).
-| `token`               | string | -                                                 | Authentication token for the user, ensuring secure communication.                        |
-| `senderId`            | string | -                                                 | Unique identifier for the message sender.                              |
-| `receiverId`          | string | - (Optional)                                      | Unique identifier for the message receiver.                              |
-| `primaryColor`        | string | `"#eb4034"` (Optional)                            | The primary color used for styling elements like headers, buttons, and backgrounds. |
+| `openWidget`          | boolean | `false`                                             | Boolean value to control whether the widget is open (true) or closed (false) on initial load.                                                      |
+| `onToggleWidget`      | function | `-`                                               | Callback function that triggers when the widget is toggled. Receives a boolean argument indicating the widget's current state (true for open, false for closed).
+| `token`               | string | `-`                                                 | Authentication token for the user, ensuring secure communication.                        |
+| `senderId`            | string | `-`                                                 | Unique identifier for the message sender.                              |
+| `receiverId`          | string | `-` (optional)                                      | Unique identifier for the message receiver.                              |
+| `primaryColor`        | string | `"#eb4034"` (optional)                            | The primary color used for styling elements like headers, buttons, and backgrounds. |
