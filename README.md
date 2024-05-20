@@ -80,10 +80,10 @@ export default App;
 
 | Prop Name             | Type   | Default Value                                     | Description                                                                         |
 | --------------------- | ------ | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `apiKey`              | string |                                                   | The API key required for the **OpenAI API** integration.                            |
-| `openWidget`         | boolean | false                                       | The name/title of the chatbot displayed in the header.                              |
-| `isTypingMessage`     | string | `"Typing..."`                                     | The message displayed when the chatbot is typing a response.                        |
-| `IncommingErrMsg`     | string | `"Oops! Something went wrong. Please try again."` | The error message displayed when an API request fails.                              |
-| `primaryColor`        | string | `"#eb4034"`                                       | The primary color used for styling elements like headers, buttons, and backgrounds. |
-| `inputMsgPlaceholder` | string | `"Send a Message"`                                | The placeholder text shown in the chat input textarea.                              |
-| `chatIcon`            | any    | `ChatIcon()` (ReactElement)                       | The icon displayed in the chatbot toggler button.                                   |
+| `apiKey`              | string |                                                   | Your API key for authenticating the chat widget.                            |
+| `openWidget`          | boolean | false                                             | Boolean value to control whether the widget is open (true) or closed (false) on initial load.                                                      |
+| `onToggleWidget`      | function | -                                               | Callback function that triggers when the widget is toggled. Receives a boolean argument indicating the widget's current state (true for open, false for closed).
+| `token`               | string | -                                                 | Authentication token for the user, ensuring secure communication.                        |
+| `senderId`            | string | -                                                 | Unique identifier for the message sender.                              |
+| `receiverId`          | string | - (Optional)                                      | Unique identifier for the message receiver.                              |
+| `primaryColor`        | string | `"#eb4034"` (Optional)                            | The primary color used for styling elements like headers, buttons, and backgrounds. |
