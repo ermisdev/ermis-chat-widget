@@ -10,6 +10,7 @@ import Notification from "../../commons/Notification";
 import "./style.css";
 
 interface ChatWidgetIProps {
+  apiKey: string;
   openWidget: boolean;
   onToggleWidget: () => void;
   token: string;
@@ -18,14 +19,7 @@ interface ChatWidgetIProps {
   primaryColor?: string;
 }
 
-const BASE_URL = "http://42.119.181.15:8448";
-
-const chatClient = ErmisChat.getInstance("dz5f4d5kzrue", {
-  enableInsights: true,
-  enableWSFallback: true,
-  allowServerSideConnect: true,
-  baseURL: BASE_URL,
-});
+const BASE_URL = "http://210.79.176.52:8558";
 
 const paramsQueryChannels: any = {
   filter: { type: ChatType.Messaging },
@@ -40,6 +34,7 @@ const paramsQueryChannels: any = {
 };
 
 const ErmisChatWidget = ({
+  apiKey = '',
   openWidget = false,
   onToggleWidget,
   token,
@@ -47,6 +42,14 @@ const ErmisChatWidget = ({
   receiverId = "",
   primaryColor = "#eb4034",
 }: ChatWidgetIProps) => {
+
+  const chatClient = ErmisChat.getInstance(apiKey, {
+    enableInsights: true,
+    enableWSFallback: true,
+    allowServerSideConnect: true,
+    baseURL: BASE_URL,
+  });
+
   const lowCaseSenderId = senderId.toLowerCase();
   const lowCaseReceiverId = receiverId.toLowerCase() || "";
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -60,6 +63,7 @@ const ErmisChatWidget = ({
         try {
           await chatClient.connectUser(
             {
+              api_key: apiKey,
               id: lowCaseSenderId,
               name: lowCaseSenderId,
               image: "",

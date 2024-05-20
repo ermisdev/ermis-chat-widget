@@ -19,7 +19,7 @@
   "keywords": [
     "chatbot"
   ],
-  "author": "Tuanmua",
+  "author": "ermis-developer",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -27,7 +27,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.3.1",
     "postcss": "^8.4.38",
-    "react": "^18.3.1",
+    "react": "link:../node_modules/react",
     "react-dom": "^18.3.1",
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
@@ -36,7 +36,7 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
+    "react": "link:../node_modules/react",
     "react-dom": "^18.3.1"
   },
   "dependencies": {
